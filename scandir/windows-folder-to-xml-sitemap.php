@@ -1,13 +1,13 @@
 <?php
 $path    = 'C:\MAMP\htdocs\folder\subfolder';
 /*
-Create an array of directory structure recursively.
+Create an XML sitemap of a folder structure (recursively).
 
 in_array()    http://php.net/manual/en/function.in-array.php
 is)_dir()     http://php.net/manual/en/function.is-dir.php
 str_replace() http://php.net/manual/en/function.str-replace.php
 
-MAMP Php can read the folder contents of a network drive.
+Note: MAMP PHP can read the folder contents of a network drive.
 */
 
 function echoUrl( $url ) {
