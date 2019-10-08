@@ -1,7 +1,8 @@
 <?php
 
 /*
-Wrap text in common HTML tags.
+Simplify generating HTML tags.
+
 
 How to use:
 
@@ -24,7 +25,10 @@ class htmlTags {
 		echo $this->html;
 	}
 	// Given a $url, returns an HTML hyperlink.
-	function ahref( $url ) {
+	function ahref( $url, $text ) {
+		if ( empty($text) )
+			$text = $url;
+		return 	"<a href='$url'>" . $text . "</a>";
 		return 	"<a href='$url'>" . $url . "</a>";
 	}
 	
@@ -37,9 +41,17 @@ class htmlTags {
 	function tr( $content ) {
 		return 	"<tr>" . $content . "</tr>\n";
 	}
+
+	function trClass( $content, $class) {
+		return 	"<tr class='$class'>" . $content . "</tr>\n";
+	}
 	
 	function li( $content ) {
 		return 	"<li>" . $content . "</li>\n";
+	}
+
+	function strong( $content ) {
+		return 	"<strong>" . $content . "</strong>\n";
 	}
 }
 ?>
